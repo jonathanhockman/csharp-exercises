@@ -13,18 +13,18 @@ namespace Example.Controllers
 {
     public class CustomFilter : Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute
     {
-        public override void OnActionExecuting(ActionExecutingContext context)
-        {
-            System.Diagnostics.Debug.WriteLine("OnActionExecuting called in custom filter");
-            System.Diagnostics.Debug.WriteLine(string.Format("Current actions method is {0}", context.HttpContext.Request.Method));
+        //public override void OnActionExecuting(ActionExecutingContext context)
+        //{
+        //    System.Diagnostics.Debug.WriteLine("OnActionExecuting called in custom filter");
+        //    System.Diagnostics.Debug.WriteLine(string.Format("Current actions method is {0}", context.HttpContext.Request.Method));
 
-            if (context.ActionArguments.ContainsKey("param1"))
-                context.ActionArguments["param1"] = "i reset it in a filter";
-            else
-                context.ActionArguments.Add("param1", "i added it in a filter");
+        //    if (context.ActionArguments.ContainsKey("param1"))
+        //        context.ActionArguments["param1"] = "i reset it in a filter";
+        //    else
+        //        context.ActionArguments.Add("param1", "i added it in a filter");
 
-            base.OnActionExecuting(context);
-        }
+        //    base.OnActionExecuting(context);
+        //}
     }
 
     [CustomFilter]
@@ -41,7 +41,7 @@ namespace Example.Controllers
                     <input type='submit' value='next' />
                 </form>
                 ",
-                new MediaTypeHeaderValue("text/html")
+                "text/html"
             );
         }
 
@@ -57,7 +57,7 @@ namespace Example.Controllers
                                     <input type='submit' value='finish' />
                                 </form>
                              ";
-            return Content(string.Format(content, param1), new MediaTypeHeaderValue("text/html"));
+            return Content(string.Format(content, param1), "text/html");
         }
 
         [HttpPost]
@@ -90,7 +90,7 @@ namespace Example.Controllers
         }
 
         [HttpGet]
-        public IActionResult FIlterExample(string param1)
+        public IActionResult FilterExample(string param1)
         {
             return Content(string.Format("WIth param1: {0}", param1));
         }

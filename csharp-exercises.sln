@@ -22,7 +22,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharCount", "ConsoleApp1\Ch
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloMVC2", "HelloMVC2\HelloMVC2.csproj", "{FB55F71A-A823-47BF-8830-63CC6BA0598C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{FBEEAE37-5633-415B-86BA-9EB4EFC4B951}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example", "Example\Example.csproj", "{FBEEAE37-5633-415B-86BA-9EB4EFC4B951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{B180EFB6-6B1E-48F8-85E3-C1A6CC8EE622}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +76,10 @@ Global
 		{FBEEAE37-5633-415B-86BA-9EB4EFC4B951}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBEEAE37-5633-415B-86BA-9EB4EFC4B951}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBEEAE37-5633-415B-86BA-9EB4EFC4B951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B180EFB6-6B1E-48F8-85E3-C1A6CC8EE622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B180EFB6-6B1E-48F8-85E3-C1A6CC8EE622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B180EFB6-6B1E-48F8-85E3-C1A6CC8EE622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B180EFB6-6B1E-48F8-85E3-C1A6CC8EE622}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

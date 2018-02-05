@@ -1,0 +1,21 @@
+﻿<h2>Yo Cheese List</h2>
+
+@if (ViewBag.cheeses.Count == 0)
+{
+    <h4>No cheeses yet</h4>
+}
+else
+{
+    <ul>
+        @foreach (var cheese in ViewBag.cheeses)
+    {
+        <li>
+            <p>
+                <strong>@cheese.Name</strong>
+                @cheese.Description
+            </p>
+        </li>
+}
+    </ul>
+    
+}

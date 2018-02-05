@@ -43,7 +43,7 @@ namespace Example
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Example}/{action=Index}/{id?}");
             });
         }
     }
