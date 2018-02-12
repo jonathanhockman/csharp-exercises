@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 using Example.Models;
+using Example.ViewModels;
 
 namespace Example.Controllers
 {
@@ -12,20 +13,28 @@ namespace Example.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.cheeses = CheeseData.All();
-            return View();
+            return View(CheeseData.All());
         }
 
         public IActionResult Add()
         {
-            return View();
+            return View(new AddCheeseViewModel());
         }
 
         [HttpPost]
-        public IActionResult Add(Cheese newCheese)
+        public IActionResult Add(AddCheeseViewModel cheeseViewModel)
         {
-            CheeseData.Add(newCheese);
-            return Redirect("/Example");
+            if (ModelState.IsValid)
+            {
+                CheeseData.Add(new Cheese {
+                    Name = cheeseViewModel.Name,
+                    Description = cheeseViewModel.Description,
+                    Type = cheeseViewModel.Type
+                });
+                return Redirect("/Example");
+            }
+
+            return View(cheeseViewModel);
         }
 
         public IActionResult Remove()

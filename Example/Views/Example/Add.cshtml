@@ -1,15 +1,27 @@
-﻿
+﻿@model Example.ViewModels.AddCheeseViewModel;
 @{
     ViewData["Title"] = "Add";
 }
 
 <h1>Add Cheese</h1>
 
+<div asp-validation-summary="All"></div>
+
 <form method="POST">
-    <label>name</label>
-    <input type="text" name="name" />
-    <label>description</label>
-    <input type="text" name="description" />
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div>
+        <label asp-for="Type"></label>
+        <select asp-for="Type" asp-items="Model.CheeseTypes"></select>
+    </div>
     <input type="submit" value="Add" />
 </form>
 
