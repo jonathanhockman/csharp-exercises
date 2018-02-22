@@ -12,20 +12,22 @@ namespace Example.ViewModels
         [Required]
         public string Name { get; set; }
         [Required]
-        [ContainsAngry]
+        //[ContainsAngry]
         public string Description { get; set; }
-        public Cheese.CheeseType Type { get; set; }
-        public List<SelectListItem> CheeseTypes { get; set; }
+        public int CategoryID { get; set; }
+        public List<SelectListItem> CheeseCategories { get; set; }
 
-        public AddCheeseViewModel()
+        public AddCheeseViewModel() { }
+
+        public AddCheeseViewModel(List<CheeseCategory> categories)
         {
-            CheeseTypes = new List<SelectListItem>();
+            CheeseCategories = new List<SelectListItem>();
 
-            foreach(int k in Enum.GetValues(typeof(Cheese.CheeseType)))
+            foreach(var cat in categories)
             {
-                CheeseTypes.Add(new SelectListItem {
-                    Value = k.ToString(),
-                    Text = ((Cheese.CheeseType)k).ToString()
+                CheeseCategories.Add(new SelectListItem {
+                    Value = cat.ID.ToString(),
+                    Text = cat.Name
                 });
             }
         }

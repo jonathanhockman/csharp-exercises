@@ -3,7 +3,7 @@
 <form method="post" >
     @foreach(var cheese in ViewBag.cheeses)
     {
-        <input type="checkbox" name="cheeseIds" value=@cheese.Id >
+        <input type="checkbox" name="cheeseIds" value=@cheese.ID >
         <label>@cheese.Name</label>
         <br />
     }
