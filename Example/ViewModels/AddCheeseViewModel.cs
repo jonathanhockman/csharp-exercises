@@ -3,14 +3,16 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System;
 using System.ComponentModel.DataAnnotations;
+using Example.ViewModels.Validation;
 
 namespace Example.ViewModels
 {
     public class AddCheeseViewModel
     {
         [Required]
-        [Display(Name = "Name")]
         public string Name { get; set; }
+        [Required]
+        [ContainsAngry]
         public string Description { get; set; }
         public Cheese.CheeseType Type { get; set; }
         public List<SelectListItem> CheeseTypes { get; set; }
