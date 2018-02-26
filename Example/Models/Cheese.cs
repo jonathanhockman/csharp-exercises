@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Example.Models
 {
@@ -12,5 +13,7 @@ namespace Example.Models
 
         public int CategoryID { get; set; }
         public CheeseCategory Category { get; set; }
+
+        public List<CheeseMenu> CheeseMenus { get; set; } = new List<CheeseMenu>();
     }
 }
